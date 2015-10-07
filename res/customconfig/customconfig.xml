@@ -223,7 +223,7 @@
 
 		<seekBar description="Hotplug threshold for cpu1 (0 disable core1, possible range from down_threshold up to 100) (Default: 68%)" name="up_threshold_hotplug_freq1" action="generic_cortex /tmp/up_threshold_hotplug1" unit="%" min="0" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Hotplug threshold for cpu1 (possible range from 11 to under up_threshold). (Default: 55%)" name="down_threshold_hotplug1" action="generic_cortex /tmp/down_threshold_hotplug1" unit="%" min="0" reversed="false" step="1" max="100"/>
+		<seekBar description="Hotplug threshold for cpu1 (possible range from 11 to under up_threshold). (Default: 55%)" name="ddown_threshold_hotplug1" action="generic_cortex /tmp/down_threshold_hotplug1" unit="%" min="0" reversed="false" step="1" max="100"/>
 
 		<seekBar description="Hotplug up frequency threshold for core1. Possible values 0 disable and range from over down_threshold_hotplug_freq1 to max scaling frequency. (Default: 0 kHz)" name="up_threshold_hotplug_freq1" action="generic_cortex /tmp/up_threshold_hotplug_freq1" unit="kHz" min="0" reversed="false" step="100000" max="1600000"/>
 
