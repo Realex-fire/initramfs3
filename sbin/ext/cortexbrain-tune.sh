@@ -700,6 +700,10 @@ CPU_GOV_TWEAKS()
 			CPU_HOTPLUG_TWEAKS "awake";
 			echo "$sampling_rate" > "$sampling_rate_tmp";
 			echo "$up_threshold" > "$up_threshold_tmp";
+			echo "$go_hispeed_load" > "$go_hispeed_load_tmp";
+			echo "$timer_rate" > "$timer_rate_tmp";
+			echo "$min_sample_time" > "$min_sample_time_tmp";
+			echo "$above_hispeed_delay" > "$above_hispeed_delay_tmp";
 			echo "$up_threshold_at_min_freq" > "$up_threshold_at_min_freq_tmp";
 			echo "$inc_cpu_load_at_min_freq" > "$inc_cpu_load_at_min_freq_tmp";
 			echo "$down_threshold" > "$down_threshold_tmp";
@@ -707,11 +711,6 @@ CPU_GOV_TWEAKS()
 			echo "$sampling_down_factor" > "$sampling_down_factor_tmp";
 			echo "$down_differential" > "$down_differential_tmp";
 			echo "$freq_step_at_min_freq" > "$freq_step_at_min_freq_tmp";
-			if [ "$SYSTEM_GOVERNOR" == "zzmanX" ]; then
-				echo "5" > "$freq_step_tmp";
-			else
-				echo "$freq_step" > "$freq_step_tmp";
-			fi;
 			echo "$freq_step_dec" > "$freq_step_dec_tmp";
 			echo "$freq_step_dec_at_max_freq" > "$freq_step_dec_at_max_freq_tmp";
 			echo "$freq_for_responsiveness" > "$freq_for_responsiveness_tmp";
@@ -723,18 +722,25 @@ CPU_GOV_TWEAKS()
 			echo "$freq_up_brake_at_min_freq" > "$freq_up_brake_at_min_freq_tmp";
 			echo "$freq_up_brake" > "$freq_up_brake_tmp";
 			echo "$force_freqs_step" > "$force_freqs_step_tmp";
-			echo "$sampling_down_max_mom" > "$sampling_down_max_mom_tmp";
-			echo "$sampling_down_mom_sens" > "$sampling_down_mom_sens_tmp";
-			echo "$up_threshold_hp_fst" > "$up_threshold_hp_fst_tmp";
-			echo "$down_threshold_hp_fst" > "$down_threshold_hp_fst_tmp";
-			echo "$up_threshold_hp_freq_fst" > "$up_threshold_hp_freq_fst_tmp";
-			echo "$down_threshold_hp_freq_fst" > "$down_threshold_hp_freq_fst_tmp";
+			echo "$sampling_down_max_momentum" > "$sampling_down_max_momentum_tmp";
+			echo "$sampling_down_momentum_sensitivity" > "$sampling_down_momentum_sensitivity_tmp";
+			echo "$up_threshold_hotplug1" > "$up_threshold_hotplug1_tmp";
+			echo "$down_threshold_hotplug1" > "$down_threshold_hotplug1_tmp";
+			echo "$up_threshold_hotplug_freq1" > "$up_threshold_hotplug_freq1_tmp";
+			echo "$down_threshold_hotplug_freq1" > "$down_threshold_hotplug_freq1_tmp";
 			echo "$smooth_up" > "$smooth_up_tmp";
 			echo "$freq_limit" > "$freq_limit_tmp";
-			echo "$fast_scaling" > "$fast_scaling_tmp";
+			echo "$fast_scaling_up" > "$fast_scaling_up_tmp";
+			echo "$fast_scaling_down" > "$fast_scaling_down_tmp";
 			echo "$early_demand" > "$early_demand_tmp";
 			echo "$grad_up_threshold" > "$grad_up_threshold_tmp";
 			echo "$disable_hotplug" > "$disable_hotplug_tmp";
+			echo "$profile_number" > "$profile_number_tmp";
+			echo "$auto_adjust_frequency_thresholds" > "$auto_adjust_frequency_thresholds_tmp";
+			echo "$afs_threshold1" > "$afs_threshold1_tmp";
+			echo "$afs_threshold2" > "$afs_threshold2_tmp";
+			echo "$afs_threshold3" > "$afs_threshold3_tmp";
+			echo "$afs_threshold4" > "$afs_threshold4_tmp";
 			echo "$boostfreq" > "$boostfreq_tmp";
 		fi;
 

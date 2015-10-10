@@ -570,23 +570,23 @@ CPU_GOV_TWEAKS()
 		fi;
 
 		local up_threshold_hotplug1_tmp="/sys/devices/system/cpu/cpufreq/$SYSTEM_GOVERNOR/up_threshold_hotplug1";
-		if [ ! -e "$up_threshold_hp_fst_tmp" ]; then
-			up_threshold_hp_fst_tmp="/dev/null";
+		if [ ! -e "$up_threshold_hotplug1_tmp" ]; then
+			up_threshold_hotplug1_tmp="/dev/null";
 		fi;
 
 		local down_threshold_hotplug1_tmp="/sys/devices/system/cpu/cpufreq/$SYSTEM_GOVERNOR/down_threshold_hotplug1";
-		if [ ! -e "$down_threshold_hp_fst_tmp" ]; then
-			down_threshold_hp_fst_tmp="/dev/null";
+		if [ ! -e "$down_threshold_hotplug1_tmp" ]; then
+			down_threshold_hotplug1_tmp="/dev/null";
 		fi;
 
 		local up_threshold_hotplug_freq1_tmp="/sys/devices/system/cpu/cpufreq/$SYSTEM_GOVERNOR/up_threshold_hotplug_freq1";
-		if [ ! -e "$up_threshold_hp_freq_fst_tmp" ]; then
-			up_threshold_hp_freq_fst_tmp="/dev/null";
+		if [ ! -e "$up_threshold_hotplug_freq1_tmp" ]; then
+			up_threshold_hotplug_freq1_tmp="/dev/null";
 		fi;
 
 		local down_threshold_hotplug_freq1_tmp="/sys/devices/system/cpu/cpufreq/$SYSTEM_GOVERNOR/down_threshold_hotplug_freq1";
-		if [ ! -e "$down_threshold_hp_freq_fst_tmp" ]; then
-			down_threshold_hp_freq_fst_tmp="/dev/null";
+		if [ ! -e "$down_threshold_hotplug_freq1_tmp" ]; then
+			down_threshold_hotplug_freq1_tmp="/dev/null";
 		fi;
 
 		local smooth_up_tmp="/sys/devices/system/cpu/cpufreq/$SYSTEM_GOVERNOR/smooth_up";
@@ -604,7 +604,7 @@ CPU_GOV_TWEAKS()
 			fast_scaling_up_tmp="/dev/null";
 		fi;
 
-		local fast_scaling_up_tmp="/sys/devices/system/cpu/cpufreq/$SYSTEM_GOVERNOR/fast_scaling_down";
+		local fast_scaling_down_tmp="/sys/devices/system/cpu/cpufreq/$SYSTEM_GOVERNOR/fast_scaling_down";
 		if [ ! -e "$fast_scaling_down_tmp" ]; then
 			fast_scaling_down_tmp="/dev/null";
 		fi;
