@@ -159,13 +159,13 @@
 
 	<settingsPane description="Interactive Gov Configuration, see descriptions" name="INTERACTIVE GOV CONFIGURATON">
 
-		<seekBar description="Measured as percentage, when load on CPU is equal to above up threshold, CPU is scaled Up. Lower value - early scale up, and vice-verse. (Default: 85%)" name="go_hispeed_load" action="generic_cortex /tmp/go_hispeed_load" unit="%" min="1" reversed="false" step="1" max="100"/>
+		<seekBar description="Go to hi speed when CPU load at or above this value. (Similar to Up-Threshold in other governors). (Default: 85%)" name="go_hispeed_load" action="generic_cortex /tmp/go_hispeed_load" unit="%" min="1" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="timer_rate" action="generic_cortex /tmp/timer_rate" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
+		<seekBar description="The sample rate of the timer used to increase frequency.(Default: 20000 uS)" name="timer_rate" action="generic_cortex /tmp/timer_rate" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
 
-		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 80000 uS)" name="min_sample_time" action="generic_cortex /tmp/min_sample_time" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
+		<seekBar description="The minimum amount of time to spend at a frequency before we can ramp down. (Sounds like Lazy governor?!) (Default: 80000 uS)" name="min_sample_time" action="generic_cortex /tmp/min_sample_time" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
 
-		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="above_hispeed_delay" action="generic_cortex /tmp/above_hispeed_delay" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
+		<seekBar description="Measured in uS. How long you want the CPU to stay on hispeed_load or in other words, how long before you want to ramp frequency down when there is little CPU load. (Default: 20000 uS)" name="above_hispeed_delay" action="generic_cortex /tmp/above_hispeed_delay" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
 
 	</settingsPane>
 
@@ -257,7 +257,7 @@
 
 		<seekBar description="Scale up frequency if the load goes up in one step of grad up value. (Default: 50%)" name="grad_up_threshold" action="generic_cortex /tmp/grad_up_threshold" unit="%" min="11" reversed="false" step="1" max="100"/>
 
-		<spinner description="Switch to enable/disable auto adjust frequency thresholds functionality (possible values 0 disable or 1 enable. (Default: Disabled)" name="auto_adjust_frequency_thresholds" action="generic_cortex /tmp/auto_adjust_frequency_thresholds">
+		<spinner description="Switch to enable/disable auto adjust frequency thresholds functionality (possible values 0 disable or 1 enable. (Default: Disabled). If enabled, all freq thresholds used by the governor will be adjusted accordingly to the new scaling max policy. " name="auto_adjust_frequency_thresholds" action="generic_cortex /tmp/auto_adjust_frequency_thresholds">
 			<spinnerItem name="Disabled" value="0"/> 
 			<spinnerItem name="Enabled" value="1"/> 
 		</spinner>
