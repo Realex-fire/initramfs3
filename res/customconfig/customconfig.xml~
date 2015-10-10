@@ -159,13 +159,13 @@
 
 	<settingsPane description="Interactive Gov Configuration, see descriptions" name="INTERACTIVE GOV CONFIGURATON">
 
-		<seekBar description="Measured as percentage, when load on CPU is equal to above up threshold, CPU is scaled Up. Lower value - early scale up, and vice-verse. (Default: 85%)" name="go_hispeed_load" action="generic /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load" unit="%" min="1" reversed="false" step="1" max="100"/>
+		<seekBar description="Measured as percentage, when load on CPU is equal to above up threshold, CPU is scaled Up. Lower value - early scale up, and vice-verse. (Default: 85%)" name="go_hispeed_load" action="generic_cortex /tmp/go_hispeed_load" unit="%" min="1" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="timer_rate" action="generic /sys/devices/system/cpu/cpufreq/interactive/timer_rate" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
+		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="timer_rate" action="generic_cortex /tmp/timer_rate" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
 
-		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 80000 uS)" name="min_sample_time" action="generic /sys/devices/system/cpu/cpufreq/interactive/min_sample_time" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
+		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 80000 uS)" name="min_sample_time" action="generic_cortex /tmp/min_sample_time" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
 
-		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="above_hispeed_delay" action="generic /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
+		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="above_hispeed_delay" action="generic_cortex /tmp/above_hispeed_delay" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
 
 	</settingsPane>
 
@@ -216,7 +216,7 @@
 
 	<settingsPane description="ZZMOOVE Gov Configuration, see descriptions" name="ZZMOOVE GOV CONFIGURATON">
 
-			<spinner description="Switch zzmoove profiles (Default: Default)" name="profile_number" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/profile_number">
+		<spinner description="Switch zzmoove profiles (Default: Default)" name="profile_number" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/profile_number">
 			<spinnerItem name="Default" value="1"/> 
 			<spinnerItem name="Yank Battery" value="2"/> 
 			<spinnerItem name="Yank Battery Extreme" value="3"/> 

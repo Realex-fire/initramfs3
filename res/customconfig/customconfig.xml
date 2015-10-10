@@ -159,13 +159,13 @@
 
 	<settingsPane description="Interactive Gov Configuration, see descriptions" name="INTERACTIVE GOV CONFIGURATON">
 
-		<seekBar description="Measured as percentage, when load on CPU is equal to above up threshold, CPU is scaled Up. Lower value - early scale up, and vice-verse. (Default: 85%)" name="go_hispeed_load" action="generic /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load" unit="%" min="1" reversed="false" step="1" max="100"/>
+		<seekBar description="Measured as percentage, when load on CPU is equal to above up threshold, CPU is scaled Up. Lower value - early scale up, and vice-verse. (Default: 85%)" name="go_hispeed_load" action="generic_cortex /tmp/go_hispeed_load" unit="%" min="1" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="timer_rate" action="generic /sys/devices/system/cpu/cpufreq/interactive/timer_rate" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
+		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="timer_rate" action="generic_cortex /tmp/timer_rate" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
 
-		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 80000 uS)" name="min_sample_time" action="generic /sys/devices/system/cpu/cpufreq/interactive/min_sample_time" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
+		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 80000 uS)" name="min_sample_time" action="generic_cortex /tmp/min_sample_time" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
 
-		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="above_hispeed_delay" action="generic /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
+		<seekBar description="Measured in uS and actual meaning being Sampling Interval, this factor determines how often the governor should poll for CPU usage in terms of frequency and load percentage to make scaling decisions - either scale CPU Up or scale it Down. (Default: 20000 uS)" name="above_hispeed_delay" action="generic_cortex /tmp/above_hispeed_delay" unit="uS" min="10000" reversed="false" step="10000" max="120000"/>
 
 	</settingsPane>
 
@@ -216,7 +216,7 @@
 
 	<settingsPane description="ZZMOOVE Gov Configuration, see descriptions" name="ZZMOOVE GOV CONFIGURATON">
 
-		<spinner description="Switch zzmoove profiles (Default: Default)" name="profile_number" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/profile_number">
+		<spinner description="Switch zzmoove profiles (Default: Default)" name="profile_number" action="generic_cortex /tmp/profile_number">
 			<spinnerItem name="Default" value="1"/> 
 			<spinnerItem name="Yank Battery" value="2"/> 
 			<spinnerItem name="Yank Battery Extreme" value="3"/> 
@@ -230,47 +230,47 @@
 			<spinnerItem name="ZaneZam Relax" value="11"/> 
 		</spinner>
 
-		<seekBar description="Max sampling down factor which should be set by momentum (0 disable momentum, possible range from sampling_down_factor up to 100000. (Default: 0)" name="sampling_down_max_momentum" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/sampling_down_max_momentum" unit="int" min="0" reversed="false" step="10" max="100000"/>
+		<seekBar description="Max sampling down factor which should be set by momentum (0 disable momentum, possible range from sampling_down_factor up to 100000. (Default: 0)" name="sampling_down_max_momentum" action="generic_cortex /tmp/sampling_down_max_momentum" unit="int" min="0" reversed="false" step="10" max="100000"/>
 
-		<seekBar description="How fast the sampling down factor should be switched (possible values from 1 to 500. (Default: 50)" name="sampling_down_momentum_sensitivity" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/sampling_down_momentum_sensitivity" unit="int" min="1" reversed="false" step="10" max="500"/>
+		<seekBar description="How fast the sampling down factor should be switched (possible values from 1 to 500. (Default: 50)" name="sampling_down_momentum_sensitivity" action="generic_cortex /tmp/sampling_down_momentum_sensitivity" unit="int" min="1" reversed="false" step="10" max="500"/>
 
-		<seekBar description="Hotplug threshold for cpu1 (0 disable core1, possible range from down_threshold up to 100) (Default: 68%)" name="up_threshold_hotplug_freq1" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/up_threshold_hotplug1" unit="%" min="0" reversed="false" step="1" max="100"/>
+		<seekBar description="Hotplug threshold for cpu1 (0 disable core1, possible range from down_threshold up to 100) (Default: 68%)" name="up_threshold_hotplug_freq1" action="generic_cortex /tmp/up_threshold_hotplug1" unit="%" min="0" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Hotplug threshold for cpu1 (possible range from 11 to under up_threshold). (Default: 55%)" name="down_threshold_hotplug1" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/down_threshold_hotplug1" unit="%" min="0" reversed="false" step="1" max="100"/>
+		<seekBar description="Hotplug threshold for cpu1 (possible range from 11 to under up_threshold). (Default: 55%)" name="down_threshold_hotplug1" action="generic_cortex /tmp/down_threshold_hotplug1" unit="%" min="0" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Hotplug up frequency threshold for core1. Possible values 0 disable and range from over down_threshold_hotplug_freq1 to max scaling frequency. (Default: 0 kHz)" name="up_threshold_hotplug_freq1" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/up_threshold_hotplug_freq1" unit="kHz" min="0" reversed="false" step="100000" max="1600000"/>
+		<seekBar description="Hotplug up frequency threshold for core1. Possible values 0 disable and range from over down_threshold_hotplug_freq1 to max scaling frequency. (Default: 0 kHz)" name="up_threshold_hotplug_freq1" action="generic_cortex /tmp/up_threshold_hotplug_freq1" unit="kHz" min="0" reversed="false" step="100000" max="1600000"/>
 
-		<seekBar description="Hotplug down frequency threshold for core1. Possible values 0 disable and range from min scaling to under up_threshold_hotplug_freq1 frequency. (Default: 0 kHz)" name="down_threshold_hotplug_freq1" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/down_threshold_hotplug_freq1" unit="kHz" min="0" reversed="false" step="100000" max="1600000"/>
+		<seekBar description="Hotplug down frequency threshold for core1. Possible values 0 disable and range from min scaling to under up_threshold_hotplug_freq1 frequency. (Default: 0 kHz)" name="down_threshold_hotplug_freq1" action="generic_cortex /tmp/down_threshold_hotplug_freq1" unit="kHz" min="0" reversed="false" step="100000" max="1600000"/>
 
-		<seekBar description="This modification makes the governor use two lookup tables holding current, next and previous frequency to directly get a correct target frequency instead of calculating target frequencies with up_threshold and step_up percentage. The two scaling lookup tables used contain different scaling steps/frequencies to achieve faster upscaling on higher CPU load. (Default: 75%)" name="smooth_up" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/smooth_up" unit="%" min="0" reversed="false" step="1" max="100"/>
+		<seekBar description="This modification makes the governor use two lookup tables holding current, next and previous frequency to directly get a correct target frequency instead of calculating target frequencies with up_threshold and step_up percentage. The two scaling lookup tables used contain different scaling steps/frequencies to achieve faster upscaling on higher CPU load. (Default: 75%)" name="smooth_up" action="generic_cortex /tmp/smooth_up" unit="%" min="0" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Limit frequency. (possible values 0 disable limit, 100000 kHz - 1600000 kHz) (Default: 0 kHz)" name="freq_limit" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/freq_limit" unit="kHz" min="0" reversed="false" step="100000" max="1600000"/>
+		<seekBar description="Limit frequency. (possible values 0 disable limit, 100000 kHz - 1600000 kHz) (Default: 0 kHz)" name="freq_limit" action="generic_cortex /tmp/freq_limit" unit="kHz" min="0" reversed="false" step="100000" max="1600000"/>
 
-		<seekBar description="1-4 number of scaling jumps only for upscaling, 5-8 equivalent to 1-4 for up and down scaling. (Default: 0)" name="fast_scaling_up" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/fast_scaling_up" unit="int" min="0" reversed="false" step="1" max="8"/>
+		<seekBar description="1-4 number of scaling jumps only for upscaling, 5-8 equivalent to 1-4 for up and down scaling. (Default: 0)" name="fast_scaling_up" action="generic_cortex /tmp/fast_scaling_up" unit="int" min="0" reversed="false" step="1" max="8"/>
 
-		<seekBar description="1-4 number of scaling jumps only for upscaling, 5-8 equivalent to 1-4 for up and down scaling. (Default: 0)" name="fast_scaling_down" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/fast_scaling_down" unit="int" min="0" reversed="false" step="1" max="8"/>
+		<seekBar description="1-4 number of scaling jumps only for upscaling, 5-8 equivalent to 1-4 for up and down scaling. (Default: 0)" name="fast_scaling_down" action="generic_cortex /tmp/fast_scaling_down" unit="int" min="0" reversed="false" step="1" max="8"/>
 
-		<spinner description="Switch to enable/disable early demand functionality (possible values 0 disable or 1 enable. (Default: Disabled)" name="early_demand" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/early_demand">
+		<spinner description="Switch to enable/disable early demand functionality (possible values 0 disable or 1 enable. (Default: Disabled)" name="early_demand" action="generic_cortex /tmp/early_demand">
 			<spinnerItem name="Disabled" value="0"/> 
 			<spinnerItem name="Enabled" value="1"/> 
 		</spinner>
 
-		<spinner description="Switch to enable/disable auto adjust frequency thresholds functionality (possible values 0 disable or 1 enable. (Default: Disabled)" name="auto_adjust_frequency_thresholds" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/auto_adjust_frequency_thresholds">
+		<seekBar description="Scale up frequency if the load goes up in one step of grad up value. (Default: 50%)" name="grad_up_threshold" action="generic_cortex /tmp/grad_up_threshold" unit="%" min="11" reversed="false" step="1" max="100"/>
+
+		<spinner description="Switch to enable/disable auto adjust frequency thresholds functionality (possible values 0 disable or 1 enable. (Default: Disabled)" name="auto_adjust_frequency_thresholds" action="generic_cortex /tmp/auto_adjust_frequency_thresholds">
 			<spinnerItem name="Disabled" value="0"/> 
 			<spinnerItem name="Enabled" value="1"/> 
 		</spinner>
 
-		<seekBar description="Scale up frequency if the load goes up in one step of grad up value. (Default: 50%)" name="grad_up_threshold" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/grad_up_threshold" unit="%" min="11" reversed="false" step="1" max="100"/>
+		<seekBar description="Auto frequency threshold step 1 (Default: 25%)" name="afs_threshold1" action="generic_cortex /tmp/afs_threshold1" unit="%" min="0" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Auto frequency threshold step 1 (Default: 25%)" name="afs_threshold1" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/afs_threshold1" unit="%" min="0" reversed="false" step="1" max="100"/>
+		<seekBar description="Auto frequency threshold step 2 (Default: 50%)" name="afs_threshold2" action="generic_cortex /tmp/afs_threshold2" unit="%" min="0" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Auto frequency threshold step 2 (Default: 50%)" name="afs_threshold2" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/afs_threshold2" unit="%" min="0" reversed="false" step="1" max="100"/>
+		<seekBar description="Auto frequency threshold step 3 (Default: 75%)" name="afs_threshold3" action="generic_cortex /tmp/afs_threshold3" unit="%" min="0" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Auto frequency threshold step 3 (Default: 75%)" name="afs_threshold3" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/afs_threshold3" unit="%" min="0" reversed="false" step="1" max="100"/>
+		<seekBar description="Auto frequency threshold step 4 (Default: 90%)" name="afs_threshold4" action="generic_cortex /tmp/afs_threshold4" unit="%" min="0" reversed="false" step="1" max="100"/>
 
-		<seekBar description="Auto frequency threshold step 4 (Default: 90%)" name="afs_threshold4" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/afs_threshold4" unit="%" min="0" reversed="false" step="1" max="100"/>
-
-		<spinner description="Switch to enable/disable hotplugging (possible values are any value above 0 to disable hotplugging and 0 to enable it. (Default: Enabled)" name="disable_hotplug" action="generic /sys/devices/system/cpu/cpufreq/zzmoove/disable_hotplug">
+		<spinner description="Switch to enable/disable hotplugging (possible values are any value above 0 to disable hotplugging and 0 to enable it. (Default: Enabled)" name="disable_hotplug" action="generic_cortex /tmp/disable_hotplug">
 			<spinnerItem name="Enabled" value="0"/> 
 			<spinnerItem name="Disabled" value="1"/> 
 		</spinner>
